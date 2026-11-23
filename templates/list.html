@@ -1,0 +1,35 @@
+{{define "list"}}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokédex</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <h1>Pokédex</h1>
+
+  <form action="/pokemon" method="get" class="search">
+    <input type="search" name="nom" value="{{.Search}}" placeholder="Rechercher un Pokémon">
+    <button type="submit">Rechercher</button>
+  </form>
+
+  <ul class="grid">
+    {{range .Pokemon}}
+      <li class="card">
+        <a href="/pokemon/{{.Id}}">
+          <img src="{{.Image.Regular}}" alt="{{.Name.Fr}}" loading="lazy">
+          <span class="num">#{{.Id}}</span>
+          <strong>{{.Name.Fr}}</strong>
+        </a>
+      </li>
+    {{else}}
+      <li>Aucun Pokémon ne correspond à « {{$.Search}} ».</li>
+    {{end}}
+  </ul>
+
+  <footer>Données : Tyradex (tyradex.app)</footer>
+</body>
+</html>
+{{end}}

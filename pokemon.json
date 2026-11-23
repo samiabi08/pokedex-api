@@ -1,0 +1,17 @@
+{
+    "pokedex_id": 25,
+    "category": "Pokémon Souris",
+    "name": {
+        "fr": "Pikachu"
+    },
+    "link": "https://tyradex.app/api/v1/pokemon/{id}",
+    "sprites": {
+        "regular": "https://raw.githubusercontent.com/Yarkis01/TyraDex/images/sprites/25/regular.png"
+    },
+    "types": [
+        {
+            "name": "Électrik",
+            "image": "https://raw.githubusercontent.com/Yarkis01/TyraDex/images/types/electrik.png"
+        }
+    ]
+    }
